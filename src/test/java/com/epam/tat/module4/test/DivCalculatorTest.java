@@ -14,12 +14,12 @@ public class DivCalculatorTest extends BaseCalculatorTest {
         };
     }
 
-    @Test(dataProvider = "divLongData", groups = {"division"})
+    @Test(dataProvider = "divLongData", groups = {"division", "base_division"})
     public void testDivLong(long a, long b, long expected) {
         Assert.assertEquals(calculator.div(a, b), expected, "Invalid result of long division");
     }
 
-    @Test(expectedExceptions = NumberFormatException.class, groups = {"division"})
+    @Test(expectedExceptions = NumberFormatException.class, groups = {"division"}, dependsOnGroups = {"base_division"})
     public void testDivByZero() {
         calculator.div(10L, 0L);
     }

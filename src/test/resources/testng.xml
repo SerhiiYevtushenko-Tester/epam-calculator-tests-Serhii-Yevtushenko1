@@ -2,6 +2,20 @@
 <suite name="CalculatorSuite" parallel="classes" thread-count="4">
 
     <test name="All Calculator Tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <include name="addition"/>
+                <include name="subtraction"/>
+                <include name="multiplication"/>
+                <include name="division"/>
+                <include name="base_division"/>
+                <include name="trigonometry"/>
+                <include name="exponentiation"/>
+                <include name="boolean_checks"/>
+            </run>
+        </groups>
+
         <classes>
             <class name="com.epam.tat.module4.test.CosCalculatorTest"/>
             <class name="com.epam.tat.module4.test.CtgCalculatorTest"/>
